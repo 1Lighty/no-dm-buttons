@@ -4,14 +4,15 @@
 *
 * ————————————————————————————————————————————————————————————————————————————— */
 
+import { getComponent, suppressErrors } from '@util';
 import { PromisesObject, UPlugin } from '@classes';
 import { after, unpatchAll } from '@patcher';
-import { getComponent, suppressErrors } from '@util';
-import type { React } from '@webpack';
+
 import type { ReactComponent } from '@classes';
+import type { React } from '@webpack';
 
 export default class NoDMButtons extends UPlugin {
-  _PrivateChannelsList: ReactComponent
+  _PrivateChannelsList: ReactComponent;
   start(): void {
     suppressErrors(this.patchPrivateChannelsList.bind(this))(this.promises);
   }
