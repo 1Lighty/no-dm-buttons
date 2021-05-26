@@ -5,10 +5,10 @@
 * ————————————————————————————————————————————————————————————————————————————— */
 
 import { getComponent, suppressErrors } from '@util';
-import { PromisesObject, UPlugin } from '@classes';
 import { after, unpatchAll } from '@patcher';
+import { UPlugin } from '@classes';
 
-import type { ReactComponent } from '@classes';
+import type { PromisesObject, ReactComponent } from '@classes';
 import type { React } from '@webpack';
 
 export default class NoDMButtons extends UPlugin {
