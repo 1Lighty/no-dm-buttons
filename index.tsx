@@ -25,7 +25,7 @@ export default class NoDMButtons extends UPlugin {
     if (promiseState.cancelled) return;
     this._PrivateChannelsList = PrivateChannelsList;
     after('no-dm-buttons', PrivateChannelsList.component, 'getDerivedStateFromProps', (_, __, ret: { preRenderedChildren: number, nonNullChildren: React.FunctionComponent[] }) => {
-      ret.nonNullChildren = ret.nonNullChildren.filter(e => e && (e.toString().indexOf('key:"stage-discovery"') === -1 && e.toString().indexOf('key:"premium"') === -1));
+      ret.nonNullChildren = ret.nonNullChildren.filter(e => e && (e.type.toString().indexOf('key:"stage-discovery"') === -1 && e.type.displayName !== 'NitroButton'));
     });
     PrivateChannelsList.forceUpdateAll();
   }
