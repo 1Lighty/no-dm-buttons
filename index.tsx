@@ -25,6 +25,8 @@ export default class NoDMButtons extends Plugin {
       if (nitroButtonIdx !== -1) props.children.splice(nitroButtonIdx, 1, null);
       const libraryButtonIdx = props.children.findIndex(e => e?.type?.displayName === 'LibraryButton');
       if (libraryButtonIdx !== -1) props.children.splice(libraryButtonIdx, 1, null);
+      const snowsgivingButtonIdx = props.children.findIndex(e => e?.type?.displayName === 'SnowsgivingButton');
+      if (snowsgivingButtonIdx !== -1) props.children.splice(snowsgivingButtonIdx, 1, null);
     });
   }
 }
