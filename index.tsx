@@ -17,7 +17,7 @@ export default class NoDMButtons extends Plugin {
     unpatchAll('no-dm-buttons');
   }
   patchPrivateChannelsList() {
-    const ConnectedPrivateChannelsList = getByDisplayName('ConnectedPrivateChannelsList', { onlyModule: true });
+    const ConnectedPrivateChannelsList = getByDisplayName('ConnectedPrivateChannelsList', { ret: 'exports' });
     before('no-dm-buttons', ConnectedPrivateChannelsList, 'default', (_, [props]) => {
       props.showNitroTab = false;
       props.showLibrary = false;
